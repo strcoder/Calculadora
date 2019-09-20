@@ -1,0 +1,7 @@
+/**
+ * Racional
+ */
+public class Racional {
+
+    
+}

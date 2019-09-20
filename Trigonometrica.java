@@ -1,0 +1,7 @@
+/**
+ * Trigonometrica
+ */
+public class Trigonometrica {
+
+    
+}

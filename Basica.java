@@ -1,0 +1,7 @@
+/**
+ * Basica
+ */
+public class Basica {
+
+    
+}
