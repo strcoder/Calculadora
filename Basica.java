@@ -1,5 +1,5 @@
 /**
- * Bbsica
+ * Basica
  */
 public class Basica {
     private int a;
