@@ -1,6 +1,8 @@
 /**
  * Basica
  */
+import javax.swing.JOptionPane;
+
 public class Basica {
     private int a;
     private int b;
@@ -17,28 +19,28 @@ public class Basica {
     * Suma los valores de a y b
     */
     public void suma() {
-        System.out.println("El resultado de la suma es: " + (this.a + this.b));
+        JOptionPane.showMessageDialog(null, "El resultado es: " + (this.a + this.b));
     }
 
     /*
     * Resta los valores de a y b
     */
     public void resta() {
-        System.out.println("El resultado de la resta es: " + (this.a - this.b));
+        JOptionPane.showMessageDialog(null, "El resultado es: " + (this.a - this.b));
     }
 
     /*
     * Multiplica los valores de a y b
     */
     public void multiplicacion() {
-        System.out.println("El resultado de la multiplicación es: " + (this.a * this.b));
+        JOptionPane.showMessageDialog(null, "El resultado es: " + (this.a * this.b));
     }
 
     /*
     * Divide los valores de a y b
     */
     public void division() {
-        System.out.println("El resultado de la división es: " + ((float)this.a / (float)this.b));
+        JOptionPane.showMessageDialog(null, "El resultado es: " + ((float)this.a / (float)this.b));
     }
     
 }

@@ -1,6 +1,8 @@
 /**
  * Trigonometrica
  */
+import javax.swing.JOptionPane;
+
 public class Trigonometrica {
     private double numero;
     private double resultado;
@@ -120,7 +122,7 @@ public class Trigonometrica {
     * Impresion del resultado
     */
     public void resultado () {
-        System.out.println("Resultado: " + this.resultado);
+        JOptionPane.showMessageDialog(null, "Resultado: " + this.resultado);
     }
     
 }

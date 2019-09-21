@@ -1,6 +1,8 @@
 /**
  * Racional
  */
+import javax.swing.JOptionPane;
+
 public class Racional {
     private int numerador_a;
     private int denominador_a;
@@ -23,9 +25,9 @@ public class Racional {
     * Muestra los elementos en su forma racional
     */
     public void mostrar() {
-        System.out.println("Los numeros son: ");
-        System.out.println("a = " + numerador_a + "/" + denominador_a);
-        System.out.println("b = " + numerador_b + "/" + denominador_b);
+        JOptionPane.showMessageDialog(null, "Los numeros son:\na: "
+             + this.numerador_a + "/" + this.denominador_a +
+             "\nb: " + this.numerador_b + "/" + this.denominador_b);
     }
 
     /*
@@ -112,9 +114,9 @@ public class Racional {
         simplificacion('b');
 
         if ((this.numerador_a == this.numerador_b) && (this.denominador_a == this.denominador_b)) {
-            System.out.println("Los numeros son iguales");
+            JOptionPane.showMessageDialog(null, "Los numeros son equivalentes");
         } else {
-            System.out.println("Los numeros son diferentes");
+            JOptionPane.showMessageDialog(null, "Los numeros no son diferentes");
         }
     }
 
@@ -123,13 +125,12 @@ public class Racional {
     */
     public void resultado () {
         simplificacion('c');
-        System.out.println("El resultado es: ");
         if (numerador_c == 0 || denominador_c == 0) {
-            System.out.println(numerador_c);
+            JOptionPane.showMessageDialog(null, "El resultado es: 0");
         } else if (numerador_c == denominador_c) {
-            System.out.println(1);
+            JOptionPane.showMessageDialog(null, "El resultado es: 1");
         } else {
-            System.out.println(numerador_c + "/" + denominador_c);
+            JOptionPane.showMessageDialog(null, "El resultado es: " + numerador_c + "/" + denominador_c);
         }
     }
 }
