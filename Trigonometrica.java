@@ -9,16 +9,14 @@ public class Trigonometrica {
 
     public Trigonometrica (double numero) {
         this.numero = numero;
+        convertir_a_radianes();
     }
 
     /*
     * Convesion de grados a radianes
     */
-    public double convertir_a_radianes () {
-        double radianes;
-        radianes = (double) (this.numero * Math.PI) / 180;
-
-        return radianes;
+    public void convertir_a_radianes () {
+        this.numero = (double) (this.numero * Math.PI) / 180;
     }
 
     /*
@@ -28,9 +26,6 @@ public class Trigonometrica {
         double factorial = 1;
         for (int i = 1; i <= numero; i++) {
             factorial = factorial * i;
-            if (i % 2 == 0) {
-                factorial = factorial * -1;
-            }
         }
 
         return factorial;
@@ -41,7 +36,7 @@ public class Trigonometrica {
     */
     public double potencia (double base, int exponente) {
         double potencia = 1;
-        for (int i = 1; i < exponente; i++) {
+        for (int i = 1; i <= exponente; i++) {
             potencia = potencia * base;
         }
 
@@ -52,30 +47,26 @@ public class Trigonometrica {
     * Calculo del seno de un angulo
     */
     public void sen () {
-        double radianes = convertir_a_radianes();
-        double aux1 = 0;
-        int aux2 = 1;
-        for (int i = 1; i < 1000; i++) {
-            aux1 += potencia(radianes, i+1) / factorial(aux2);
-            aux2 += 2;
+        double aux1 = 0, aux2 = 0;
+        for (int i = 0; i < 1000; i++) {
+            aux1 = ((potencia(-1, i) / factorial((2 * i) + 1))) * potencia(this.numero, (2 * i) + 1);
+            aux2 = aux2 + aux1;
         }
 
-        this.resultado = aux1;
+        this.resultado = aux2;
     }
 
     /*
     * Calculo del coseno de un angulo
     */
     public void cos () {
-        double radianes = convertir_a_radianes();
-        double aux1 = 0;
-        int aux2 = 0;
+        double aux1 = 0, aux2 = 0;
         for (int i = 0; i < 1000; i++) {
-            aux1 += potencia(radianes, i+1) / factorial(aux2);
-            aux2 += 2;
+            aux1 = (potencia(-1, i) / factorial((2 * i))) * potencia(this.numero, (2 * i));
+            aux2 = aux2 + aux1; 
         }
 
-        this.resultado = aux1;
+        this.resultado = aux2;
     }
 
     /*
@@ -83,10 +74,10 @@ public class Trigonometrica {
     */
     public void tan () {
         sen();
-        double sen = this.resultado;
+        double seno = this.resultado;
         cos();
-        double cos = this.resultado;
-        this.resultado = sen/cos;
+        double coseno = this.resultado;
+        this.resultado = seno/coseno;
     }
 
     /*
